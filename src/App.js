@@ -17,7 +17,8 @@ class App extends Component {
             <h1>Bloc Jams</h1>
               <main>
                     <Route exact path="/" component={Landing} />
-                    <Route path="/library" component={Library} />
+					<Route path="/library" component={Library} />
+					<Route path="/album/:slug" component={Album} />
               </main>
           </header>
       </div>
