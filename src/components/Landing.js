@@ -7,7 +7,7 @@ const Landing = () => (
 		<section className='selling-points'>
 			<div className='point'>
 				<h2 className='point-title'>Choose your music</h2>
-				<p className='point-description'>The world is full of awesome music.</p>
+				<p className='point-description'>The world is full of awesome music; why should you have to listen to music that someone else chose?</p>
 			</div>
 			<div className='point'>
 				<h2 className='point-title'>Unlimited streaming ad-free</h2>
@@ -15,7 +15,7 @@ const Landing = () => (
 			</div>
 			<div className='point'>
 				<h2 className='class-title'>Mobile enabled</h2>
-				<p className='class-description'>Listen to your music on the go</p>
+				<p className='class-description'>Listen to your music on the go. This streaming service is available on all mobile platforms.</p></p>
 			</div>
 		</section>
 	</section>
