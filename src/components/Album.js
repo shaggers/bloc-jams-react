@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
+import SongControls from './SongControls';
 
 class Album extends Component {
 	constructor(props) {
@@ -91,11 +92,10 @@ class Album extends Component {
 							this.state.album.songs.map((song, index) =>
 								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseHandler(song)} onMouseLeave={() => this.mouseHandler(song)}>    
 									<td>
-										<span>
-										<span className="ion-play"><i class="icon ion-md-play"></i></span>										
-										<span className="ion-pause"><i class="icon ion-md-pause"></i></span>
-										{index + 1}
-										</span>	
+										{this.state.hover || this.state.isPlaying ?
+											<SongControls isPlaying={this.state.isPlaying} currentSong={this.state.currentSong} mouseHandler={() => this.mouseHandler(this.state.currentSong)} />
+											: index + 1
+										}
 									</td>					
 									<td>{song.title}</td>
 									<td>{song.duration}</td>
