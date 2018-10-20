@@ -14,7 +14,8 @@ class Album extends Component {
 			album: album,
 			currentSong: album.songs[0],
 			isPlaying: false,
-			update: this.update.bind(this)
+			hover: false,
+			hoverItem: album.songs
 		};
 
 		this.audioElement = document.createElement('audio');
@@ -47,14 +48,33 @@ class Album extends Component {
 			}
 		}	
 
-	componentWillMount() {
-		this.state.album.songs.forEach((song, index) => { this.song[index] = <SongControls key={index} song={song} /> });
+	mouseEnter() {
+		this.setState({ hover: true }); 		
+		console.log('entered');
 	}
 
-	update(index) {
-		this.currentSong[index] = <SongControls key={index} song={'song changed'} />
-		this.forceUpdate();
+	mouseLeave() {
+		this.setState({ hover: false });
+		this.setState({ hoverItem: null })
+		console.log('left');
 	}
+
+	setHoverItem(index) {
+		this.setState({ hoverItem: index })
+		console.log('set song');
+	}
+
+	mouseHandler(index) {
+		if (this.state.hover) {
+			this.mouseLeave()
+			
+		} else {
+			this.mouseEnter();
+			this.setHoverItem(index); 			
+			console.log(index);
+		}
+	}
+	
 
 		render() {
 		return (
@@ -80,10 +100,11 @@ class Album extends Component {
 					<tbody>
 						{
 							this.state.album.songs.map((song, index) =>
-								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.update(2) }  >    
+								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseHandler(index)} onMouseLeave={() => this.mouseHandler(index)}>
 									<td>
-										{
-											this.song
+										{this.state.hoverItem === index || this.state.isPlaying === song ?
+											<SongControls isPlaying={this.state.isPlaying} hoverItem={this.state.hoverItem} mouseHandler={() => this.mouseHandler(this.state.index)} hover={this.state.hover} />
+											: index + 1
 										}
 									</td>					
 									<td>{song.title}</td>
