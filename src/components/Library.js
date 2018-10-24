@@ -11,16 +11,24 @@ class Library extends Component {
 	render() {
 		return (
 			<section className='library'>
+			<div className="ui two stackable cards">
 				{
 					this.state.albums.map((album, index) =>
-						<Link to={`/album/${album.slug}`} key={index}>
-							<img src={album.albumCover} alt={album.title} />
-							<div>{album.title}</div>
-							<div>{album.artist}</div>
-							<div>{album.songs.length} songs</div>
+						<div className="ui card">
+							<Link to={`/album/${album.slug}`} key={index}>
+							<div className="image">
+								<img src={album.albumCover} alt={album.title} />
+							</div>
+							<div className="content">
+								<div><h3 className="ui header">{album.title}</h3></div>
+								<div><h5 className="ui header">{album.artist}</h5></div>
+								<div>{album.songs.length} songs</div>
+							</div>
 						</Link>
+						</div>
 					)
 				}
+			</div>
 			</section>
 		);
 	}

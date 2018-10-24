@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 const Landing = () => (
 	<section className='landing'>
-		<h1 className='hero-title'>Turn the music up!</h1>
+		<h1 className='ui header'>Turn the music up!</h1>
 
-		<section className='selling-points'>
-			<div className='point'>
-				<h2 className='point-title'>Choose your music</h2>
+	<div className="ui stackable three column grid">
+			<div className="column">
+				<h2 className='ui header'>Choose your music</h2>
 				<p className='point-description'>The world is full of awesome music; why should you have to listen to music that someone else chose?</p>
 			</div>
-			<div className='point'>
-				<h2 className='point-title'>Unlimited streaming ad-free</h2>
+			<div className="column">
+				<h2 className='ui header'>Unlimited streaming ad-free</h2>
 				<p className='point-description'>No arbitrary limits. No distractions.</p>
 			</div>
-			<div className='point'>
-				<h2 className='class-title'>Mobile enabled</h2>
+			<div className="column">
+				<h2 className='ui header'>Mobile enabled</h2>
 				<p className='class-description'>Listen to your music on the go. This streaming service is available on all mobile platforms.</p>
 			</div>
-		</section>
+	</div>
 	</section>
 );
 
