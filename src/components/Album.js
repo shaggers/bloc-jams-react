@@ -48,8 +48,9 @@ class Album extends Component {
 			}
 		}	
 
-	mouseEnter() {
-		this.setState({ hover: true }); 		
+	mouseEnter(index) {
+		this.setState({ hover: true }); 
+		this.setHoverItem(index);
 		console.log('entered');
 	}
 
@@ -62,17 +63,6 @@ class Album extends Component {
 	setHoverItem(index) {
 		this.setState({ hoverItem: index })
 		console.log('set song');
-	}
-
-	mouseHandler(index) {
-		if (this.state.hover) {
-			this.mouseLeave()
-			
-		} else {
-			this.mouseEnter();
-			this.setHoverItem(index); 			
-			console.log(index);
-		}
 	}
 	
 
@@ -100,10 +90,10 @@ class Album extends Component {
 					<tbody>
 						{
 							this.state.album.songs.map((song, index) =>
-								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseHandler(index)} onMouseLeave={() => this.mouseHandler(index)}>
+								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseEnter(index)} onMouseLeave={() => this.mouseLeave()}>
 									<td>
-										{this.state.hoverItem === index || this.state.isPlaying === song ?
-											<SongControls isPlaying={this.state.isPlaying} hoverItem={this.state.hoverItem} mouseHandler={() => this.mouseHandler(this.state.index)} hover={this.state.hover} />
+										{this.state.hoverItem === index || this.state.currentSong === song ?
+											<SongControls isPlaying={this.state.isPlaying} hoverItem={this.state.hoverItem} currentSong={this.state.currentSong} />
 											: index + 1
 										}
 									</td>					
