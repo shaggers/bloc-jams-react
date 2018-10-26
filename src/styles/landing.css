@@ -1,3 +1,13 @@
-﻿body
-{
+﻿#landingtitle {
+	margin-top: 20%;
+	padding: 2% 10% 2% 10%;
+	border: 1px solid orange;
+}
+
+#cardcontainer {
+	margin: 8%;
+}
+
+.column.landing {
+	border: 1px solid blue;
 }

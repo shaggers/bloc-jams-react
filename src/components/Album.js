@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import '../styles/album.css' 
+
 
 class Album extends Component {
 	constructor(props) {
@@ -116,9 +118,9 @@ class Album extends Component {
 
 	render() {
 		return (
-			<div className="ui stackable two column grid">
-				<div className="column">
-				<div className="ui card">
+			<div id="album" className="ui stackable two column grid">
+				<div className="column albumcover">
+				<div className="ui card albumcover">
 					<section id="album-info">
 						<div className="image">
 						<img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import albumData from './../data/albums';
+import '../styles/library.css'
 
 class Library extends Component {
 	constructor(props) {
@@ -14,10 +15,10 @@ class Library extends Component {
 			<div className="ui two stackable cards">
 				{
 					this.state.albums.map((album, index) =>
-						<div className="ui card">
+						<div id="albumcard" className="ui card">
 							<Link to={`/album/${album.slug}`} key={index}>
 							<div className="image">
-								<img src={album.albumCover} alt={album.title} />
+								<img id="albumcover" src={album.albumCover} alt={album.title} />
 							</div>
 							<div className="content">
 								<div><h3 className="ui header">{album.title}</h3></div>

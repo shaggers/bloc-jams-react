@@ -1,3 +1,24 @@
-﻿body
-{
+﻿#album-cover-art {
+	width: 280px;
+	height: 280px;
+}
+
+#album {
+	margin-top: 10%;
+	padding: 20px;
+	border: 1px solid blue;
+}
+
+
+
+
+#album-info {
+	
+}
+
+.ui.card.albumcover {
+	width: 520px;
+	height: 390px;
+	padding: 20px;
+	border: 1px solid orange;
 }

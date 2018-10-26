@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import VolumeBar from './VolumeBar';
 
+
 class PlayerBar extends Component {
 	render() {
 		return (
-			<div className="ui three item menu">	
+			<div className="ui bottom fixed three item menu">	
 				<section className="item" id="time-control">
 					<div className="current-time">{this.props.formatTime(this.props.currentTime)}</div>
 					<input
