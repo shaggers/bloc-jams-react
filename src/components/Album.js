@@ -15,7 +15,8 @@ class Album extends Component {
 			currentSong: album.songs[0],
 			isPlaying: false,
 			hover: false,
-			hoverItem: album.songs
+			hoverItem: album.songs,
+			currentSongIndex: 0
 		};
 
 		this.audioElement = document.createElement('audio');
@@ -36,6 +37,18 @@ class Album extends Component {
 		setSong(song) {
 			this.audioElement.src = song.audioSrc;
 			this.setState({ currentSong: song });
+
+			const getIndex = () => {
+				const album = albumData.find(album => {
+					return album.slug === this.props.match.params.slug
+				});
+				for (var i = 0; i < album.songs.length; i++) {
+					if ( album.songs[i].title === song.title ) {
+						this.setState({ currentSongIndex: i });
+					}
+				}
+			}
+		 getIndex();	
 		}
 
 		handleSongClick(song) {
@@ -93,7 +106,12 @@ class Album extends Component {
 								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseEnter(index)} onMouseLeave={() => this.mouseLeave()}>
 									<td>
 										{this.state.hoverItem === index || this.state.currentSong === song ?
-											<SongControls isPlaying={this.state.isPlaying} hoverItem={this.state.hoverItem} currentSong={this.state.currentSong} />
+											<SongControls
+												isPlaying={this.state.isPlaying}
+												hoverItem={this.state.hoverItem}
+												currentSong={this.state.currentSong}
+												hover={this.state.hover}
+												currentSongIndex={this.state.currentSongIndex} />
 											: index + 1
 										}
 									</td>					
