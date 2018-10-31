@@ -20,7 +20,7 @@ class Library extends Component {
 							<div className="image">
 								<img id="albumcover" src={album.albumCover} alt={album.title} />
 							</div>
-							<div className="content">
+							<div id="albumcontent" className="content">
 								<div><h3 className="ui header">{album.title}</h3></div>
 								<div><h5 className="ui header">{album.artist}</h5></div>
 								<div>{album.songs.length} songs</div>

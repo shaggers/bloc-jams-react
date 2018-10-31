@@ -7,15 +7,15 @@ const Landing = () => (
 
 	<div id="cardcontainer" className="ui stackable three column grid">
 			<div className="column landing">
-				<h2 className='ui header'>Choose your music</h2>
+				<h2 className='ui header sub'>Choose your music</h2>
 				<p className='point-description'>The world is full of awesome music; why should you have to listen to music that someone else chose?</p>
 			</div>
 			<div className="column landing">
-				<h2 className='ui header'>Unlimited streaming ad-free</h2>
+				<h2 className='ui header sub'>Unlimited streaming ad-free</h2>
 				<p className='point-description'>No arbitrary limits. No distractions.</p>
 			</div>
 			<div className="column landing">
-				<h2 className='ui header'>Mobile enabled</h2>
+				<h2 className='ui header sub'>Mobile enabled</h2>
 				<p className='class-description'>Listen to your music on the go. This streaming service is available on all mobile platforms.</p>
 			</div>
 	</div>

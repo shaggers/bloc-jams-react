@@ -1,11 +1,27 @@
 ﻿.item.nav {
-	margin: 1% 5% 1% 5%;
-	border-left: 2px solid blue ;
-	border-right: 2px solid blue ;
+	margin-left: 5%;
 }
 #navheader {
-	margin: 1% 28% 1% 8% ;
-	padding: 5px;
-	color: orange;
-	border: 1px solid blue;
+	text-align: right;
+	padding: 0px;
+	color: #D35400;
+	margin-left: 12%;
+	font-family: 'Spicy Rice', cursive;
+	font-size: 2.3em;
+}
+
+.ui.top.fixed.menu {
+	max-height: 75px;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background: url('../images/gradientMicrophone.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
 }

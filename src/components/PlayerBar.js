@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import VolumeBar from './VolumeBar';
-
+import '../styles/playerbar.css'
 
 class PlayerBar extends Component {
 	render() {
 		return (
-			<div className="ui bottom fixed three item menu">	
+			<div className="ui orange bottom fixed three item inverted menu">	
 				<section className="item" id="time-control">
 					<div className="current-time">{this.props.formatTime(this.props.currentTime)}</div>
 					<input
@@ -20,15 +20,15 @@ class PlayerBar extends Component {
 					<div className="total-time">{this.props.formatTime(this.props.duration)}</div> 
 				</section>
 				<section className="item" id="buttons">
-					<button className="ui icon button" id="previous" onClick={this.props.handlePrevClick}>
+					<button className="ui red icon button" id="previous" onClick={this.props.handlePrevClick}>
 						<i class="icon ion-md-skip-backward"></i>
 					</button>
-					<button className="ui icon button" id="play-pause" onClick={this.props.handleSongClick} >
+					<button className="ui red icon button" id="play-pause" onClick={this.props.handleSongClick} >
 						{this.props.isPlaying ?
 							<i class="icon ion-md-pause"></i>
 							: <i class="icon ion-md-play"></i>}
 					</button>
-					<button className="ui icon button" id="next" onClick={this.props.handleNextClick}>
+					<button className="ui red icon button" id="next" onClick={this.props.handleNextClick}>
 						<i class="icon ion-md-skip-forward"></i>
 					</button>
 				</section>

@@ -1,3 +1,7 @@
-﻿body
-{
+﻿.current-time {
+	margin: 5px;
+}
+
+.total-time {
+	margin: 5px;
 }

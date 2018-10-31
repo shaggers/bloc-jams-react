@@ -126,17 +126,15 @@ class Album extends Component {
 						<img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
 						</div>
 						<div className="content">
-						<div className="album-details">
-							<h1 id="album-title">{this.state.album.title}</h1>
-							<h2 className="artist">{this.state.album.artist}</h2>
-							<div id="release-info">{this.state.album.releaseInfo}</div>
-						</div>
+							<h2 id="album-title" className="albumcontent">{this.state.album.title}</h2>
+							<h2 id="artist" className="albumcontent">{this.state.album.artist}</h2>
+							<h3 id="release-info" className="albumcontent">{this.state.album.releaseInfo}</h3>
 						</div>
 					</section>
 				</div>
 				</div>
-				<div className="column">	
-				<table className="ui celled table" id="song-list">
+				<div className="column table">	
+				<table className="ui celled unstackable table" id="song-list">
 					<thead>
 						<colgroup>
 							<col id="song-number-column" />
@@ -155,9 +153,9 @@ class Album extends Component {
 						{
 							this.state.album.songs.map( (song, index) =>
 								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
-									<td>{index + 1}</td>
-									<td>{song.title}</td>
-									<td>{song.duration}</td>
+									<td id="song">{index + 1}</td>
+									<td id="title">{song.title}</td>
+									<td id="duration">{song.duration}</td>
 								</tr>
 								)
 						}

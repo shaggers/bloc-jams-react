@@ -11,10 +11,14 @@ class App extends Component {
     return (
       <div className="App">
 			<header>
-				<div className="ui top fixed menu">
-						<Link className="item nav" to='/'>Landing</Link>
-						<Link className="item nav" to='/library'>Library</Link>		
-					<h1 className="ui header" id="navheader">
+				<div className="ui yellow top fixed inverted menu">
+					<div className="item nav">
+						<Link className="ui inverted brown button" to='/'>Landing</Link>
+					</div>
+					<div className="item nav">
+						<Link className="ui inverted brown button" to='/library'>Library</Link>		
+					</div>
+						<h1 className="ui header" id="navheader">
 						<i className="music icon"></i>
 						Bloc Jams
 					</h1>
