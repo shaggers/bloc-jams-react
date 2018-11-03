@@ -79,13 +79,14 @@ class Album extends Component {
 		console.log('set song');
 	}
 
-	getRowIndex() {
+	getRowIndex(row) {
 		const album = albumData.find(album => {
 			return album.slug === this.props.match.params.slug
 		});
 		for (var i = 0; i < album.songs.length; i++) {
-			if (album.songs[i].title === this.song.title) {
+			if (album.songs[i].title === row.title) {
 				this.setState({ rowIndex: i });
+				return i;
 			}
 		}
 	}
@@ -117,7 +118,7 @@ class Album extends Component {
 							this.state.album.songs.map((song, index) =>
 								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseEnter(index)} onMouseLeave={() => this.mouseLeave()}>
 									<td>
-										{this.getRowIndex()}
+										
 										{this.state.hoverItem === index || this.state.currentSong === song ?
 											<SongControls
 												isPlaying={this.state.isPlaying}
@@ -125,7 +126,7 @@ class Album extends Component {
 												currentSong={this.state.currentSong}
 												hover={this.state.hover}
 												currentSongIndex={this.state.currentSongIndex}
-												currentRowIndex={this.state.rowIndex}
+												currentRowIndex={index}
 											/>
 											: index + 1
 										}
