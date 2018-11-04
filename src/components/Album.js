@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
+<<<<<<< HEAD
 import PlayerBar from './PlayerBar';
 <<<<<<< HEAD
 import SongControls from './SongControls';
@@ -7,6 +8,10 @@ import SongControls from './SongControls';
 import '../styles/album.css' 
 
 >>>>>>> assignment10
+=======
+import SongControls from './SongControls';
+import PlayerBar from './Playerbar';
+>>>>>>> 16a7cfb5b0d43e1d158a546c55c3d0caaf0ee309
 
 class Album extends Component {
 	constructor(props) {
@@ -20,13 +25,22 @@ class Album extends Component {
 			album: album,
 			currentSong: album.songs[0],
 			isPlaying: false,
+<<<<<<< HEAD
 			currentTime: 0,
 			duration: album.songs[0].duration,
 			currentVolume: 0.8,
+=======
+>>>>>>> 16a7cfb5b0d43e1d158a546c55c3d0caaf0ee309
 			hover: false,
 			hoverItem: album.songs,
 			currentSongIndex: 0,
 			rowIndex: 0
+<<<<<<< HEAD
+=======
+			currentTime: 0,
+			duration: album.songs[0].duration,
+			currentVolume: 0.8
+>>>>>>> 16a7cfb5b0d43e1d158a546c55c3d0caaf0ee309
 		};
 
 		this.audioElement = document.createElement('audio');
