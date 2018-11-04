@@ -1,0 +1,53 @@
+﻿#album {
+	margin: 10% 2% 2% 2%;
+	height: 500px;
+}
+
+.column.albumcover {
+	width: 40%;
+	height: 90%;
+	padding: 20px;
+}
+
+.ui.card.albumcover {
+	width: 100%;
+	height: 100%;
+	background-color:#512DA8;
+}
+
+#album-cover-art {
+	width: 320px;
+	height: 320px;
+	padding: 5px;
+}
+
+.content {
+	border: 1px solid black;
+	background-color: #9575cd;
+}
+
+.albumcontent {
+	margin: 0px;
+	padding: 0px;
+}
+
+.column.table {
+	width: 30%;
+	height: 50%;
+}
+
+.ui.celled.unstackable.table {
+	background-color: #9575cd;
+}
+
+#song {
+	width: 10%;
+}
+
+#song-title-column {
+	width: 60%;
+}
+
+#duration {
+	width: 30%;
+}

@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+<<<<<<< HEAD
 import SongControls from './SongControls';
+=======
+import '../styles/album.css' 
+
+>>>>>>> assignment10
 
 class Album extends Component {
 	constructor(props) {
@@ -161,29 +166,42 @@ class Album extends Component {
 			}
 		}
 
-		render() {
+	render() {
 		return (
-			<section className="album">
-				<section id="album-info">
-					<img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
-					<div className="album-details">
-						<h1 id="album-title">{this.state.album.title}</h1>
-						<h2 className="artist">{this.state.album.artist}</h2>
-						<div id="release-info">{this.state.album.releaseInfo}</div>
-					</div>
-				</section> 
-				<table id="song-list">
-					
+			<div id="album" className="ui stackable two column grid">
+				<div className="column albumcover">
+				<div className="ui card albumcover">
+					<section id="album-info">
+						<div className="image">
+						<img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
+						</div>
+						<div className="content">
+							<h2 id="album-title" className="albumcontent">{this.state.album.title}</h2>
+							<h2 id="artist" className="albumcontent">{this.state.album.artist}</h2>
+							<h3 id="release-info" className="albumcontent">{this.state.album.releaseInfo}</h3>
+						</div>
+					</section>
+				</div>
+				</div>
+				<div className="column table">	
+				<table className="ui celled unstackable table" id="song-list">
+					<thead>
 						<colgroup>
 							<col id="song-number-column" />
 							<col id="song-title-column" />
 							<col id="song-duration-column" />
 						</colgroup>
 
-	
+						<tr>
+							<th>Song</th>
+							<th>Title</th>
+							<th>Length</th>
+						</tr>
 
+					</thead>
 					<tbody>
 						{
+<<<<<<< HEAD
 							this.state.album.songs.map((song, index) =>
 								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseEnter(index)} onMouseLeave={() => this.mouseLeave()}>
 									<td>
@@ -202,11 +220,19 @@ class Album extends Component {
 									</td>					
 									<td>{song.title}</td>
 									<td>{song.duration}</td>
+=======
+							this.state.album.songs.map( (song, index) =>
+								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+									<td id="song">{index + 1}</td>
+									<td id="title">{song.title}</td>
+										<td id="duration">{this.formatTime(song.duration)}</td>
+>>>>>>> assignment10
 								</tr>
 								)
 						}
 					</tbody>
 				</table>
+                </div>
 				<PlayerBar
 					isPlaying={this.state.isPlaying}
 					currentSong={this.state.currentSong}
@@ -220,7 +246,7 @@ class Album extends Component {
 					handleVolumeBar={(e) => this.handleVolumeBar(e)}
 					formatTime={(time) => this.formatTime(time)}
 				/>
-			</section>
+			</div>
 		);
 	}
 }

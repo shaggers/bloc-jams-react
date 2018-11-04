@@ -1,0 +1,24 @@
+﻿#landingtitle {
+	margin-top: 20%;
+	padding: 2% 10% 2% 10%;
+	border: 1px solid #943126;
+	font-family: 'Spicy Rice', cursive;
+	color: #F7dc6f;
+	background-color: #CD6155;
+	font-size: 3em;
+	opacity: 0.8;
+}
+
+#cardcontainer {
+	margin: 8%;
+}
+
+.column.landing {
+	border: 1px solid #CD6155;
+	background-color: rgb( 236, 112, 99, 0.8);	
+}
+
+.ui.header.sub {
+	font-size: 1.5em;
+	color: #5B2C6F;
+}

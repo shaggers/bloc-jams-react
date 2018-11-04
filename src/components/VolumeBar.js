@@ -4,7 +4,7 @@ class VolumeBar extends Component {
 
 	render() {
 		return (
-			<span>
+			<div className="volumecontrol">
 				<div className='current-volume'>
 					{this.props.currentVolume > 0 ?
 						  <i class="icon ion-md-volume-high"></i>
@@ -20,7 +20,7 @@ class VolumeBar extends Component {
 				step="0.1"
 				onChange={this.props.handleVolumeBar}
 				/> 
-			</span>
+			</div>
 		)
 	}
 

@@ -1,0 +1,22 @@
+﻿#albumcover {
+	width: 90%;
+	height: 90%;
+}
+
+.library {
+	margin: 10% 2% 5% 2%;
+	padding: 20px;
+}
+
+#albumcard {
+	margin-left: 12%;
+	padding: 5px;
+	width: 33%;
+	length: 75%;
+	background-color: #512DA8;
+}
+
+#albumcontent {
+	background-color: #7e57c2;
+	color: white;
+}
