@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
-<<<<<<< HEAD
 import PlayerBar from './PlayerBar';
-<<<<<<< HEAD
 import SongControls from './SongControls';
-=======
 import '../styles/album.css' 
-
->>>>>>> assignment10
-=======
-import SongControls from './SongControls';
-import PlayerBar from './Playerbar';
->>>>>>> 16a7cfb5b0d43e1d158a546c55c3d0caaf0ee309
 
 class Album extends Component {
 	constructor(props) {
@@ -25,22 +16,16 @@ class Album extends Component {
 			album: album,
 			currentSong: album.songs[0],
 			isPlaying: false,
-<<<<<<< HEAD
 			currentTime: 0,
 			duration: album.songs[0].duration,
 			currentVolume: 0.8,
-=======
->>>>>>> 16a7cfb5b0d43e1d158a546c55c3d0caaf0ee309
 			hover: false,
 			hoverItem: album.songs,
 			currentSongIndex: 0,
-			rowIndex: 0
-<<<<<<< HEAD
-=======
+			rowIndex: 0,
 			currentTime: 0,
 			duration: album.songs[0].duration,
 			currentVolume: 0.8
->>>>>>> 16a7cfb5b0d43e1d158a546c55c3d0caaf0ee309
 		};
 
 		this.audioElement = document.createElement('audio');
@@ -108,36 +93,23 @@ class Album extends Component {
 			}
 		}	
 
-	mouseEnter(index) {
-		this.setState({ hover: true }); 
-		this.setHoverItem(index);
-		console.log('entered');
-	}
-
-	mouseLeave() {
-		this.setState({ hover: false });
-		this.setState({ hoverItem: null })
-		console.log('left');
-	}
-
-	setHoverItem(index) {
-		this.setState({ hoverItem: index })
-		console.log('set song');
-	}
-
-	getRowIndex(row) {
-		const album = albumData.find(album => {
-			return album.slug === this.props.match.params.slug
-		});
-		for (var i = 0; i < album.songs.length; i++) {
-			if (album.songs[i].title === row.title) {
-				this.setState({ rowIndex: i });
-				return i;
-			}
+		mouseEnter(index) {
+			this.setState({ hover: true }); 
+			this.setHoverItem(index);
+			console.log('entered');
 		}
-	}
-	
 
+		mouseLeave() {
+			this.setState({ hover: false });
+			this.setState({ hoverItem: null })
+			console.log('left');
+		}
+
+		setHoverItem(index) {
+			this.setState({ hoverItem: index })
+			console.log('set song');
+		}
+	
 		handlePrevClick() {
 			const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
 			const newIndex = Math.max(0, currentIndex - 1);
@@ -215,7 +187,6 @@ class Album extends Component {
 					</thead>
 					<tbody>
 						{
-<<<<<<< HEAD
 							this.state.album.songs.map((song, index) =>
 								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseEnter(index)} onMouseLeave={() => this.mouseLeave()}>
 									<td>
@@ -233,16 +204,9 @@ class Album extends Component {
 										}
 									</td>					
 									<td>{song.title}</td>
-									<td>{song.duration}</td>
-=======
-							this.state.album.songs.map( (song, index) =>
-								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
-									<td id="song">{index + 1}</td>
-									<td id="title">{song.title}</td>
-										<td id="duration">{this.formatTime(song.duration)}</td>
->>>>>>> assignment10
+									<td>{this.formatTime(song.duration)}</td>
 								</tr>
-								)
+							)
 						}
 					</tbody>
 				</table>
