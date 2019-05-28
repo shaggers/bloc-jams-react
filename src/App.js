@@ -5,6 +5,18 @@ import Landing from './components/Landing';
 import Library from './components/Library';
 import Album from './components/Album';
 import './styles/app.css';
+import * as firebase from 'firebase';
+
+const config = {
+  apiKey: "AIzaSyBzz57A6_Ft7IcAU3sL35Wd8MjRAIB_hmA",
+  authDomain: "bloc-jams-react-c54c1.firebaseapp.com",
+  databaseURL: "https://bloc-jams-react-c54c1.firebaseio.com",
+  projectId: "bloc-jams-react-c54c1",
+  storageBucket: "bloc-jams-react-c54c1.appspot.com",
+  messagingSenderId: "742487839530",
+  appId: "1:742487839530:web:01c412de66ae7521"
+};
+firebase.initializeApp(config);
 
 class App extends Component {
   render() {
